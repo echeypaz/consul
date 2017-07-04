@@ -181,6 +181,7 @@ Rails.application.routes.draw do
 
     resources :verifications, controller: :verifications, only: :index do
       get :search, on: :collection
+      put :request_verification, on: :collection
     end
 
     resource :activity, controller: :activity, only: :show

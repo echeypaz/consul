@@ -1,31 +1,32 @@
 <div class="small-12 medium-12">
   <ul>
     <li class="proposals">
-      <%= link_to proposals_path, class: "proposals #{"active" if  controller_name == "proposals"}", accesskey: "p" do %>
-        <h1 class="hide-for-small-only"> <%= t("layouts.header.proposals")%></h1>
-        <span class="show-for-small-only"><%= t("layouts.header.proposals")%> </span>
+      <%= link_to root_path do %>
+        <h1 class="hide-for-small-only"> Página principal</h1>
+        <span class="show-for-small-only"> Página principal </span>
       <% end %>
     </li>
     <li class="debates">
-      <%= link_to debates_path, class: "debates #{"active" if controller_name == "debates"}", accesskey: "d"  do %>
-        <h1 class="hide-for-small-only"> <%= t("layouts.header.debates")%></h1>
-        <span class="show-for-small-only"><%= t("layouts.header.debates")%> </span>
+      <%=link_to page_path('participaGCblog1') do  %>
+        <h1 class="hide-for-small-only"> Participa Gran Canaria</h1>
+        <span class="show-for-small-only"> Participa Gran Canaria</span>
       <% end %>
+
     </li>
-   <li class= "hide-for-small-only faq">
-      <%= link_to page_path('faq'), class: "faq #{"active" if controller_name == "pages"}", accesskey: "d"  do %>
-        <h1 class="hide-for-small-only"> <%= t("layouts.header.more_information")%></h1>
+    <li class="faq">
+      <%= link_to page_path('participaGCblog2') do %>
+        <h1 class="hide-for-small-only"> Aportaciones</h1>
+        <span class="show-for-small-only"> Aportaciones</span>
       <% end %>
+
     </li>
-    <!-- <li> -->
-    <!--   <%= link_to t("layouts.header.city_council_debates"), nil, class: "city_council_debates #{"active" if controller_name == "city_council_debates"}", accesskey: "d" %> -->
-    <!-- </li> -->
-    <!-- <li> -->
-    <!--   <%= link_to t("layouts.header.organizations"), nil, class: "organizations #{"active" if current_page?("/organizations")}", accesskey: "o"  %> -->
-    <!-- </li> -->
-    <!-- <li> -->
-    <!--   <%= link_to t("layouts.header.volunteers"), nil, class: "volunteers #{"active" if current_page?("/volunteers")}", accesskey: "v"  %> -->
-    <!-- </li> -->
+    <li class="document">
+      <%= link_to page_path('participaGCblog3') do %>
+        <h1 class="hide-for-small-only"> Documentos</h1>
+        <span class="show-for-small-only"> Documentos</span>
+      <% end %>
+
+    </li>
   </ul>
 </div>
 

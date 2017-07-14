@@ -158,6 +158,10 @@ header {
             background-image: image-url("button_info.png");
             background-size: 100% 100%;
         }
+        li.document{
+            background-image: image-url("button_document.png");
+            background-size: 100% 100%;
+        }
 
         li {
           flex-grow: 1;

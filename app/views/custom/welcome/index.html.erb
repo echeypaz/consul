@@ -1,49 +1,15 @@
 <main>
   <div class="wrap row menu">
-    <div class="small-12 medium-9 column">
-      <div class="survey_banner">
-        <%= link_to image_tag('Banner.png', class: 'banner'), new_survey_answered_survey_path(@survey = Survey.find_by_code('ENC-1')) %>
-        <% if !user_signed_in? %>
-          <div class="not-logged" style='display:none' aria-hidden="false">
-            <span>
-              <%= t("votes.unauthenticated",
-                signin: link_to(t("votes.signin"), new_user_session_path),
-                signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-            </span>
-          </div>
-        <% end %>
-      </div>
-      <div id="proposals" class="proposals-list small-12 medium-6 column">
-        <h3><%= t("proposals.index.title") %> <%= t("proposals.index.orders.confidence_score").downcase %></h3>
-        <div id="proposals-list">
-          <%= render partial: 'proposals/proposal', collection: @proposals %>
-          <%# <%= paginate @proposals %>
-        </div>
-        <div class="actions">
-          <%= link_to t("shared.suggest.proposal.see_all"), proposals_path, class: 'button' %>
-        </div>
-      </div>
+    <div class="small-12 medium-12 column">
+      <p>
+        <%= image_tag('LOGO_PARTICIPA.jpg', class: 'hide-for-small-only float-left', alt: 'Logo Participa Gran Canaria') %>
+      Este sitio web se ha creado para permitir el acceso a los contenidos relevantes que se vayan elaborando durante las diferentes fases en las que consta el Proceso de Consideración Ciudadana, con la posibilidad de canalizar las opiniones, valoraciones y propuestas
+      </p><p>
+      Así mismo servirá como plataforma difusora de las noticias, novedades, acciones y eventos asociados al mismo tiempo que permitirá la comunicación no presencial entre los agentes participantes.
 
-      <div id="debates" class="debates-list small-12 medium-6 column">
-        <h3><%= t("debates.index.title") %> <%= t("debates.index.orders.confidence_score").downcase %></h3>
-        <div id="debates-list">
-          <%= render partial: 'debates/debate', collection: @debates %>
-          <%# <%= paginate @debates %>
-        </div>
-        <div class="actions">
-          <%= link_to t("shared.suggest.debate.see_all"), debates_path, class: 'button' %>
-        </div>
-      </div>
-    </div>
+      </p><p>
+      El objetivo será por tanto facilitar la información actualizada tanto al público en general como a agentes participantes en el Proceso de Consideración Ciudadana, a través de un repositorio formal, gestionado, ordenado y organizado permanentemente.
 
-    <div class="small-12 medium-3 column">
-      <aside class="margin-bottom">
-        <%= link_to new_proposal_path do %>
-          <%= image_tag 'create_proposal.png' %>
-        <% end %>
-        <%= render 'shared/summary' %>
-        <%# <%= render 'shared/social' %>
-      </aside>
-    </div>
+      </p>
   </div>
 </main>

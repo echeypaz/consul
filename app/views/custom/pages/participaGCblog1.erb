@@ -1,5 +1,7 @@
 <div class="row margin-top">
-    <div class="small-12 medium-12 column">
+
+  <section class="debate-show">
+  <div class="small-12 medium-9 column">
       <p>
         <%= image_tag('LOGO_PARTICIPA.jpg', class: 'hide-for-small-only float-left', alt: 'Logo Participa Gran Canaria') %>
 La participación ciudadana se ha convertido en un elemento distintivo de un territorio y de una sociedad. Más allá de los servicios básicos, o precisamente junto a ellos, una comunidad espera de las instituciones gobernantes unas propuestas que reflejen el dinamismo de la sociedad, contribuyan a su cohesión y la proyecten más allá de sus límites.
@@ -21,6 +23,19 @@ La participación ciudadana se ha convertido en un elemento distintivo de un ter
 
       El objetivo será por tanto facilitar la información actualizada tanto al público en general como a agentes participantes en el Proceso de Consideración Ciudadana, a través de un repositorio formal, gestionado, ordenado y organizado permanentemente.
       </p>
-
   </div>
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("debates.show.share") %></h3>
+      <div class="social-share-full">
+        <%# <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
+        <%= social_share_button_tag("#{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+  </section>
+
 </div>

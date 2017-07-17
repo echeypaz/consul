@@ -4,7 +4,7 @@ class Debate < ActiveRecord::Base
   include Taggable
   include Conflictable
   include Measurable
-  include Sanitizable
+  # include Sanitizable
   include Searchable
   include Filterable
 

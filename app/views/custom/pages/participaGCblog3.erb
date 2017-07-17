@@ -1,8 +1,24 @@
 <div class="row margin-top">
-  <div class="small-12 medium-12 column">
+  <section class="debate-show">
+  <div class="small-12 medium-9 column">
     <p>
     Documentos de partida y propuestas de reglamento insular de participación ciudadana.
     <p>
     <p><%= link_to "PROYECTO DE REGLAMENTO ORGÁNICO DE PARTICIPACIÓN CIUDADANA DEL CABILDO DE GRAN CANARIA", asset_path("PROYECTO_REGLAMENTO_PARTICIPACION_CIUDADANA_GC.pdf"), target: "_blank" %></p>
   </div>
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("debates.show.share") %></h3>
+      <div class="social-share-full">
+        <%# <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
+        <%= social_share_button_tag("#{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+
+
+  </section>
 </div>

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
-  resources :debates do
+  resources :debates, except: :index do
     member do
       post :vote
       put :flag
@@ -45,23 +45,23 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposals do
-    member do
-      post :vote
-      post :vote_featured
-      put :flag
-      put :unflag
-      get :retire_form
-      patch :retire
-    end
-    collection do
-      get :map
-      get :suggest
-      get :summary
-    end
-  end
+  # resources :proposals do
+  #   member do
+  #     post :vote
+  #     post :vote_featured
+  #     put :flag
+  #     put :unflag
+  #     get :retire_form
+  #     patch :retire
+  #   end
+  #   collection do
+  #     get :map
+  #     get :suggest
+  #     get :summary
+  #   end
+  # end
 
-  resources :proposal_ballots, only: [:index]
+  # resources :proposal_ballots, only: [:index]
 
   resources :comments, only: [:create, :show], shallow: true do
     member do
@@ -71,25 +71,25 @@ Rails.application.routes.draw do
     end
   end
 
-  scope '/participatory_budget' do
-    resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
-      post :vote, on: :member
-    end
-  end
-
-  resources :stats, only: [:index]
-
-  resources :legislations, only: [:show]
-
-  resources :annotations do
-    get :search, on: :collection
-  end
+  # scope '/participatory_budget' do
+  #   resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: 'investment_projects' do
+  #     post :vote, on: :member
+  #   end
+  # end
+  #
+  # resources :stats, only: [:index]
+  #
+  # resources :legislations, only: [:show]
+  #
+  # resources :annotations do
+  #   get :search, on: :collection
+  # end
 
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
   end
 
-  resource :account, controller: "account", only: [:show, :update, :delete] do
+  resource :account, controller: "account", only: [:update, :delete] do
     get :erase, on: :collection
   end
 
@@ -97,21 +97,21 @@ Rails.application.routes.draw do
     put :mark_all_as_read, on: :collection
   end
 
-  resources :proposal_notifications, only: [:new, :create, :show]
+  # resources :proposal_notifications, only: [:new, :create, :show]
 
   resource :verification, controller: "verification", only: [:show]
 
-  resources :surveys, only: [:show] do
-    resources :answered_surveys, only: [:new, :create, :show]
-  end
+  # resources :surveys, only: [:show] do
+  #   resources :answered_surveys, only: [:new, :create, :show]
+  # end
 
-  scope module: :verification do
-    resource :residence, controller: "residence", only: [:new, :create]
-    resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
-    resource :verified_user, controller: "verified_user", only: [:show]
-    resource :email, controller: "email", only: [:new, :show, :create]
-    resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
-  end
+  # scope module: :verification do
+  #   resource :residence, controller: "residence", only: [:new, :create]
+  #   resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
+  #   resource :verified_user, controller: "verified_user", only: [:show]
+  #   resource :email, controller: "email", only: [:new, :show, :create]
+  #   resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
+  # end
 
   namespace :admin do
     root to: "dashboard#index"
@@ -276,7 +276,5 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-  # static pages
-  get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
 end

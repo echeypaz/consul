@@ -1,0 +1,25 @@
+<h2><%= t("welcome.welcome.title") %></h2>
+
+<div class="user-permissions">
+
+  <p><%= t("welcome.welcome.user_permission_info") %></p>
+
+  <ul>
+    <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_comments") %></li>
+  </ul>
+  <h3><%= t("welcome.welcome.next") %></h3>
+  <ul>
+    <li><span class="icon-like"></span>&nbsp;<%= t("welcome.welcome.user_permission_debates") %></li>
+    <li><span class="icon-like"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal") %></li>
+    <li><span class="icon-like"></span>&nbsp;<%= t("welcome.welcome.user_permission_support_proposal") %></li>
+    <li><span class="icon-like"></span>&nbsp;<%= t("welcome.welcome.user_permission_votes") %></li>
+  </ul>
+  <p>
+    <span><%= t("welcome.welcome.user_permission_verify_info") %></span>
+  </p>
+
+ 
+  <p class="text-center">
+    <%= link_to "Volver a la web", root_path %>
+  </p>
+</div>

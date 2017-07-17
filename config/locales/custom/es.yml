@@ -642,6 +642,8 @@ es:
     welcome:
       go_to_index: Ahora no, ver iniciativas populares
       title: Empieza a participar
+      next: Próximamente podrás
+      user_permission_comments: Añadir comentarios
       user_permission_debates: Participar en propuestas
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas iniciativas populares

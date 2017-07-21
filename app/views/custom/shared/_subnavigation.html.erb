@@ -13,10 +13,17 @@
       <% end %>
 
     </li>
+    <li class="encuentros">
+      <%= link_to page_path('encuentros') do %>
+        <h1 class="hide-for-small-only">Encuentros ciudadanos </h1>
+        <span class="show-for-small-only">Encuentros ciudadanos  </span>
+      <% end %>
+
+    </li>
     <li class="faq">
-      <%= link_to controller: "debates", action: "show", id: '61' do %>
-        <h1 class="hide-for-small-only"> Aportaciones</h1>
-        <span class="show-for-small-only"> Aportaciones</span>
+      <%= link_to controller: "debates", action: "show", id: '2' do %>
+        <h1 class="hide-for-small-only"> Propuestas</h1>
+        <span class="show-for-small-only"> Propuestas</span>
       <% end %>
 
     </li>

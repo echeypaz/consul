@@ -1,0 +1,48 @@
+<div class="row margin-top">
+  <section class="debate-show">
+  <h1><%= 'Encuentros ciudadanos' %></h1>
+  <div class="small-12 medium-9 column">
+      <p>
+
+      <h2>CALENDARIO</h2>
+        <%= image_tag('encuentros.png', class: 'hide-for-small-only float-left', alt: 'Calendario de encuentros') %>
+      </p>
+      <h2>MÉTODO DE TRABAJO</h2>
+      <p>
+Queremos recoger las contribuciones y aportaciones que en el curso de la celebración de los encuentros ciudadanos puedan hacer los colectivos, la ciudadanía y los agentes implicados en la política pública de Participación Ciudadana.
+      </p><p>
+ Se trata de recoger y aglutinar las contribuciones  del debate ciudadano  sobre el Borrador de Reglamento Orgánico de Participación Ciudadana del Cabildo de Gran Canaria, integrando la visión de agentes y ciudadanía sobre las cuestiones que son relevantes y  las consideraciones sobre la adaptación del Borrador de Reglamento  a la situación actual y tendencias futuras en los próximos años.
+      </p><p>
+Obviamente, las conclusiones y propuestas resultantes  del  debate y la deliberación han de tener como referencia las tendencias actuales y futuras sobre los procesos de participación ciudadana.
+
+      </p><p>
+      Para agilizar el proceso de deliberación,le sugerimos que antes de la celebración de los encuentros revise el Borrador de Reglamento Insular de Participación Ciudadana. La lectura que proponemos para el debate debe tomar sólo como referencia de fondo los conceptos expresados en el Reglamento sobre los derechos a participación ciudadana, y centrarse en las contribuciones  en torno a  los dos bloques temáticos siguientes:
+      </p><p>
+      1.Los mecanismos de participación.  Comprende los siguientes elementos:
+      <ul >
+        <li style="margin-left: 3em;">
+        Ver TITULO PRIMERO: INSTRUMENTOS DE PARTICIPACIÓN CIUDADANA ver Capítulo Segundo: De los procesos de deliberación participativa, el Capítulo Tercero: Consultas ciudadanas y otros instrumentos de participación.
+        </li>
+      2.-  Entidades y Agentes de la Participación.Comprende los siguientes elementos:
+      <ul><li  style="margin-left: 3em;">
+      Ver TÍTULO SEGUNDO: Entidades de Participación Ciudadana
+        </li><li style="margin-left: 3em;">
+      Ver TÍTULO TERCERO: ORGANIZACIÓN ADMINISTRATIVA Y ARTICULACIÓN SOCIAL PARA LA PARTICIPACIÓN CIUDADANA
+      </li>
+      </p>
+  </div>
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h3><%= t("debates.show.share") %></h3>
+      <div class="social-share-full">
+        <%# <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
+        <%= social_share_button_tag("#{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=https://participa.grancanaria.com/" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+  </section>
+
+</div>

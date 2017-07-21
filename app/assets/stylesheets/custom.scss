@@ -158,12 +158,19 @@ header {
             background-image: image-url("button_info.png");
             background-size: 100% 100%;
         }
+        li.encuentros{
+            background-image: image-url("button_encuentros.png");
+            background-size: 100% 100%;
+        }
+
+
         li.document{
             background-image: image-url("button_document.png");
             background-size: 100% 100%;
         }
 
         li {
+          margin-right: 0.25rem;
           flex-grow: 1;
           white-space: nowrap;
           a:hover {
@@ -174,7 +181,7 @@ header {
             color: white;
           }
           h1 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             padding: 0.2em 0.2em 0.6em 0.3em;
             text-align: center;
           }
